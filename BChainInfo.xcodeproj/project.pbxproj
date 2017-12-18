@@ -19,6 +19,8 @@
 		FBD51FBF1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FBA1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift */; };
 		FBD51FC01FE73B37000E6F56 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBD51FBB1FE73B37000E6F56 /* Info.plist */; };
 		FBD51FC11FE73B37000E6F56 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FBC1FE73B37000E6F56 /* Base.swift */; };
+		FBD51FC61FE74197000E6F56 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD51FC51FE74197000E6F56 /* Alamofire.framework */; };
+		FBD51FC81FE7419A000E6F56 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBD51FC71FE7419A000E6F56 /* CommonCrypto.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		FBD51FBA1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+BinanceRequest.swift"; sourceTree = "<group>"; };
 		FBD51FBB1FE73B37000E6F56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD51FBC1FE73B37000E6F56 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		FBD51FC51FE74197000E6F56 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		FBD51FC71FE7419A000E6F56 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD51FC61FE74197000E6F56 /* Alamofire.framework in Frameworks */,
+				FBD51FC81FE7419A000E6F56 /* CommonCrypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,7 @@
 				FBD51F9C1FE73903000E6F56 /* BChainInfoTests */,
 				FBD51FA71FE73903000E6F56 /* BChainInfoUITests */,
 				FBD51F861FE73902000E6F56 /* Products */,
+				FBD51FC41FE74197000E6F56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +157,15 @@
 			path = BinApi;
 			sourceTree = "<group>";
 		};
+		FBD51FC41FE74197000E6F56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBD51FC71FE7419A000E6F56 /* CommonCrypto.framework */,
+				FBD51FC51FE74197000E6F56 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,6 +176,7 @@
 				FBD51F811FE73902000E6F56 /* Sources */,
 				FBD51F821FE73902000E6F56 /* Frameworks */,
 				FBD51F831FE73902000E6F56 /* Resources */,
+				FBD51FC91FE741B1000E6F56 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -279,6 +296,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FBD51FC91FE741B1000E6F56 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CommonCrypto.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FBD51F811FE73902000E6F56 /* Sources */ = {
@@ -456,11 +491,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NA65BL2KDF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BChainInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stanUniverse.bchainInfo.BChainInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -470,11 +512,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NA65BL2KDF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BChainInfo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stanUniverse.bchainInfo.BChainInfo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
