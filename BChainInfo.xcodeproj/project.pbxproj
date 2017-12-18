@@ -14,6 +14,11 @@
 		FBD51F931FE73902000E6F56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBD51F911FE73902000E6F56 /* LaunchScreen.storyboard */; };
 		FBD51F9E1FE73903000E6F56 /* BChainInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51F9D1FE73903000E6F56 /* BChainInfoTests.swift */; };
 		FBD51FA91FE73903000E6F56 /* BChainInfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FA81FE73903000E6F56 /* BChainInfoUITests.swift */; };
+		FBD51FBD1FE73B37000E6F56 /* BinanceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FB81FE73B36000E6F56 /* BinanceApi.swift */; };
+		FBD51FBE1FE73B37000E6F56 /* BinanceObjCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FB91FE73B37000E6F56 /* BinanceObjCApi.swift */; };
+		FBD51FBF1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FBA1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift */; };
+		FBD51FC01FE73B37000E6F56 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBD51FBB1FE73B37000E6F56 /* Info.plist */; };
+		FBD51FC11FE73B37000E6F56 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD51FBC1FE73B37000E6F56 /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		FBD51FA41FE73903000E6F56 /* BChainInfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BChainInfoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBD51FA81FE73903000E6F56 /* BChainInfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BChainInfoUITests.swift; sourceTree = "<group>"; };
 		FBD51FAA1FE73903000E6F56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD51FB71FE73B36000E6F56 /* BinanceApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BinanceApi.h; sourceTree = "<group>"; };
+		FBD51FB81FE73B36000E6F56 /* BinanceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinanceApi.swift; sourceTree = "<group>"; };
+		FBD51FB91FE73B37000E6F56 /* BinanceObjCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinanceObjCApi.swift; sourceTree = "<group>"; };
+		FBD51FBA1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+BinanceRequest.swift"; sourceTree = "<group>"; };
+		FBD51FBB1FE73B37000E6F56 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD51FBC1FE73B37000E6F56 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +108,7 @@
 		FBD51F871FE73902000E6F56 /* BChainInfo */ = {
 			isa = PBXGroup;
 			children = (
+				FBD51FB61FE73B15000E6F56 /* BinApi */,
 				FBD51F881FE73902000E6F56 /* AppDelegate.swift */,
 				FBD51F8A1FE73902000E6F56 /* ViewController.swift */,
 				FBD51F8C1FE73902000E6F56 /* Main.storyboard */,
@@ -123,6 +135,19 @@
 				FBD51FAA1FE73903000E6F56 /* Info.plist */,
 			);
 			path = BChainInfoUITests;
+			sourceTree = "<group>";
+		};
+		FBD51FB61FE73B15000E6F56 /* BinApi */ = {
+			isa = PBXGroup;
+			children = (
+				FBD51FBC1FE73B37000E6F56 /* Base.swift */,
+				FBD51FB71FE73B36000E6F56 /* BinanceApi.h */,
+				FBD51FB81FE73B36000E6F56 /* BinanceApi.swift */,
+				FBD51FB91FE73B37000E6F56 /* BinanceObjCApi.swift */,
+				FBD51FBA1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift */,
+				FBD51FBB1FE73B37000E6F56 /* Info.plist */,
+			);
+			path = BinApi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD51FC01FE73B37000E6F56 /* Info.plist in Resources */,
 				FBD51F931FE73902000E6F56 /* LaunchScreen.storyboard in Resources */,
 				FBD51F901FE73902000E6F56 /* Assets.xcassets in Resources */,
 				FBD51F8E1FE73902000E6F56 /* Main.storyboard in Resources */,
@@ -259,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBD51FC11FE73B37000E6F56 /* Base.swift in Sources */,
+				FBD51FBF1FE73B37000E6F56 /* DataRequest+BinanceRequest.swift in Sources */,
 				FBD51F8B1FE73902000E6F56 /* ViewController.swift in Sources */,
+				FBD51FBD1FE73B37000E6F56 /* BinanceApi.swift in Sources */,
 				FBD51F891FE73902000E6F56 /* AppDelegate.swift in Sources */,
+				FBD51FBE1FE73B37000E6F56 /* BinanceObjCApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
